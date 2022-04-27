@@ -1,0 +1,21 @@
+﻿@using SimpleSchool.Core.Entities
+@model SimpleSchool.Core.Entities.Room
+
+@{ Model.BuildingID = Model.BuildingID;}
+@Html.HiddenFor(m => m.BuildingID);
+
+
+<h1>Add New Room for building<a @Model.BuildingID>@Model.BuildingID</a></h1>
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <form asp-controller="Room" asp-action="Add" method="post">
+            <input type="hidden" asp-for="BuildingID"/>
+            <div class="mb-3">
+                <label asp-for="RoomNumber" asp-route-buildingId="@Model.BuildingID" class="form-label">Room#</label>
+                <input type="text" class="form-control" id="RoomNumber" asp-for="RoomNumber">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

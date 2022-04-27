@@ -1,0 +1,18 @@
+﻿@model SimpleSchool.Core.Entities.Room
+
+<h1>Edit Room</h1>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <form asp-controller="Room" asp-action="Edit" asp-route-id="@Model.RoomID" method="post">
+            <!--- buildings/edit/{id} --->
+            <input type="hidden" asp-for="BuildingID"/>
+            <input type="hidden" asp-for="RoomID"/>
+            <!-- for building == BuildingID -->
+            <div class="mb-3">
+                <label asp-for="RoomNumber" class="form-label">Room # @Model.RoomNumber</label>
+                <input type="text" class="form-control" id="RoomNumber" asp-for="RoomNumber">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

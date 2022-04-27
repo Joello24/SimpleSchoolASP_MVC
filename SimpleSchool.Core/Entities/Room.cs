@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SimpleSchool.Core.Entities
+{
+    public class Room
+    {
+        public int RoomID { get; set; }
+        public int RoomNumber { get; set; }
+        public string Description { get; set; }
+
+        public int BuildingID { get; set; }
+        public Building Building { get; set; }
+
+        public Room()
+        {
+            RoomNumber = 0;
+            Description = "";
+        }
+
+        public Room(int roomNumber, string description)
+        {
+            RoomNumber = roomNumber;
+            Description = description;
+        }
+    }
+}

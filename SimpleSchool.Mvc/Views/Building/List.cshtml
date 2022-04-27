@@ -1,0 +1,35 @@
+﻿@model List<SimpleSchool.Core.Entities.Building>
+
+@{
+    ViewBag.Title = "Building List";
+}
+
+<h1>Building List</h1>
+<div class="row">
+    <a asp-controller="Building" asp-action="Add">Add New Building</a>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var building in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Building" asp-action="Get" asp-route-id="@building.BuildingID">@building.BuildingID</a></td>
+                    <td><a asp-controller="Building" asp-action="GetRooms" asp-route-id="@building.BuildingID">@building.BuildingName</a></td>
+                    <td><a asp-controller="Building" asp-action="Add" asp-route-id="@building.BuildingID">@building.Rooms</a></td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
